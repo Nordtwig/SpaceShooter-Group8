@@ -33,3 +33,11 @@ void keyReleased() {
     moveDown = false;
   }
 }
+
+void mousePressed() {
+  isShooting = true;
+}
+
+void mouseReleased() {
+  isShooting = false;
+}

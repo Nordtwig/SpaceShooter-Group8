@@ -1,4 +1,5 @@
 1. Enemies should spawn outside screen and move inwards. Solution:
    On creation, set boolean outsideScreen to false.
    As long as outsideScreen is false, use normal teleport collision.
-   Will only be true on creation. 
+   Will only be true on creation.
+2. No rotation. For now. 
