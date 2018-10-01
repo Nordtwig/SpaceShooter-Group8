@@ -2,6 +2,7 @@ boolean moveLeft = false;
 boolean moveRight  = false;
 boolean moveUp = false;
 boolean moveDown = false;
+boolean isShooting = false;
 
 void keyPressed() {
   if (key == 'a' || key == 'A') {

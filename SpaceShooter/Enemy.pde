@@ -1,4 +1,4 @@
-class Enamy extends Spaceship {
+class Enemy extends Spaceship {
 
 
   public Enemy (float x, float y) {

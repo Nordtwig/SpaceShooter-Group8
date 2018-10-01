@@ -26,11 +26,18 @@ public void draw() {
   player.move();
   player.show();
 }
+class Enamy extends Spaceship {
 
+
+  public Enemy (float x, float y) {
+    super(x, y);
+  }
+}
 boolean moveLeft = false;
 boolean moveRight  = false;
 boolean moveUp = false;
 boolean moveDown = false;
+boolean isShooting = false;
 
 public void keyPressed() {
   if (key == 'a' || key == 'A') {
@@ -89,7 +96,7 @@ class Spaceship {
 
   public Spaceship (float x, float y) {
     position = new PVector(x, y);
-    velocity = new PVector(6, 6);
+    velocity = new PVector(4, 4);
   }
 
   public void show() {
