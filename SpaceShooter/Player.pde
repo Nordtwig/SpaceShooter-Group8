@@ -25,6 +25,6 @@ class Player extends Spaceship {
   }
 
   void shootBullet() {
-    bullet = new Bullet(position.x, position.y);
+    bullet = new Bullet(position);
   }
 }

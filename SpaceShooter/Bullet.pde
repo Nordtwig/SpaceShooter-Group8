@@ -3,7 +3,7 @@ class Bullet {
   PVector velocity;
   PVector direction;
 
-  public Bullet () {
+  public Bullet (PVector position) {
 
   }
 }
