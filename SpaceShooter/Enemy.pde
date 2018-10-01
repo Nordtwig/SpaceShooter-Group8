@@ -3,13 +3,27 @@ class Enemy extends Spaceship {
 
   public Enemy (float x, float y) {
     super(x, y);
-  	velocity.x = random(-1, 1);
-  	velocity.y = random(-1, 1);
+  	velocity.x = random(3) - 3;
+  	velocity.y = random(3) - 3;
   }
 
   void move(){
     position.x += velocity.x;
     position.y += velocity.y;
+
+    if (position.x > width){
+      position.x = 0;
+    }
+    else if(position.x < 0){
+      position.x = width;
+    }
+
+    if(position.y > height){
+      position.y = 0;
+    }
+    else if(position.y < 0){
+      position.y = height;
+    }
   }
 
   void show() {
