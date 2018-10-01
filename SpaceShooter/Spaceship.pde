@@ -5,8 +5,9 @@ class Spaceship {
 
   public Spaceship (float x, float y) {
     position = new PVector(x, y);
-    direction = new PVector();
     velocity = new PVector(4, 4);
+    direction = new PVector(velocity.normalize().x, velocity.normalize().y);
+    println(direction);
   }
 
   void show() {

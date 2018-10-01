@@ -1,4 +1,5 @@
 class Player extends Spaceship {
+  Bullet bullet;
   float angle;
 
   public Player (float x, float y) {
@@ -18,5 +19,12 @@ class Player extends Spaceship {
     if (moveDown) {
       position.y += velocity.y;
     }
+    if (isShooting) {
+      shootBullet();
+    }
+  }
+
+  void shootBullet() {
+    bullet = new Bullet(position.x, position.y);
   }
 }
