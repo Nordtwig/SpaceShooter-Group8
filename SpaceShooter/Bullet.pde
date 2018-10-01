@@ -4,6 +4,6 @@ class Bullet {
   PVector direction;
 
   public Bullet () {
-    
+
   }
 }
