@@ -2,4 +2,6 @@
    On creation, set boolean outsideScreen to false.
    As long as outsideScreen is false, use normal teleport collision.
    Will only be true on creation.
-2. No rotation. For now. 
+2. No rotation. For now.
+3. Presentation innebär en kort visuell presentation
+   Och vi får berätta vad som var jobbigt och vad som gick bra.
