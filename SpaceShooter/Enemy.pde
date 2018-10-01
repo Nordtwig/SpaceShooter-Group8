@@ -3,8 +3,8 @@ class Enemy extends Spaceship {
 
   public Enemy (float x, float y) {
     super(x, y);
-  	velocity.x = random(3) - 3;
-  	velocity.y = random(3) - 3;
+  	velocity.x = 3;
+  	velocity.y = 3;
   }
 
   void move(){
