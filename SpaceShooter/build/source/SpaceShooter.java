@@ -15,22 +15,30 @@ import java.io.IOException;
 public class SpaceShooter extends PApplet {
 
 Player player;
+Enemy enemy;
 
 public void setup() {
   
   player = new Player(width / 2, height / 2);
+  enemy = new Enemy(100, 100);
 }
 
 public void draw() {
   background(0);
   player.move();
   player.show();
+  enemy.show();
 }
-class Enamy extends Spaceship {
+class Enemy extends Spaceship {
 
 
   public Enemy (float x, float y) {
     super(x, y);
+  }
+
+  public void show() {
+    fill(255, 0, 0);
+    ellipse(100, 100, 30, 30);
   }
 }
 boolean moveLeft = false;
