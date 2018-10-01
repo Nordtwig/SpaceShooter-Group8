@@ -11,5 +11,6 @@ void draw() {
   background(0);
   player.move();
   player.show();
+  enemy.move();
   enemy.show();
 }
