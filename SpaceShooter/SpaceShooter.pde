@@ -1,8 +1,8 @@
-Spaceship player;
+Player player;
 
 void setup() {
   size(800, 800);
-  player = new Spaceship(width / 2, height / 2);
+  player = new Player(width / 2, height / 2);
 }
 
 void draw() {
