@@ -19,7 +19,7 @@ Platform(s):
   * Windows, Mac, Linux
 
 Game Moment:
-  * Dodge between bullets, shoot down enemy spaceships.''
+  * Dodge between bullets, shoot down enemy spaceships.
 
 Game Summary:
   * You are a spaceship that must shoot down other spaceships, while dodging their bullets. The more enemies you kill, the more points you get. The game ends when you die.
@@ -31,7 +31,7 @@ Anticipated Remarkability:
   * Inspired by games from the early 80's. Not very original, but nostalgic.
 
 Comparative Products:
-  * Geometry Wars, Asteroids
+  * Geometry Wars, Asteroids, Galaxian, Galaga, Space Invaders
 
 Powerups:
   * Repair Kit (Health), Bullet Boost (Bullet Speed/Size?), Afterburner(?), Nuke(?)
