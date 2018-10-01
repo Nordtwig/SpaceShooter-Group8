@@ -1,4 +1,4 @@
-##Space Shooter 1-Page GDD
+## Space Shooter 1-Page GDD
 
 Genre:
   Top-Down Space Shooter
