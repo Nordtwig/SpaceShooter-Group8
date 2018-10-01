@@ -7,8 +7,10 @@ class Bullet {
   public Bullet (PVector shipPos, float directionX, float directionY) {
     position = new PVector(shipPos.x, shipPos.y);
     direction = new PVector(directionX, directionY);
+    direction.sub(position);
     direction.normalize();
     speed = 7;
+    println(direction);
   }
 
   void move() {

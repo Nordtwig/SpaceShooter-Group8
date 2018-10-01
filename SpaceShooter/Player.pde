@@ -1,9 +1,10 @@
 class Player extends Spaceship {
-  Bullet bullet;
+  ArrayList<Bullet> bullets;
   float angle;
 
   public Player (float x, float y) {
     super(x, y);
+    bullets = new ArrayList<Bullet>();
     speed = 5;
     shipColor = color(0, 0, 168);
   }
@@ -24,14 +25,21 @@ class Player extends Spaceship {
     if (isShooting) {
       shootBullet();
     }
-    if (bullet != null) {
-      bullet.move();
-      bullet.show();
+    if (bullets != null) {
+      for (int i = 0; i < bullets.size(); i++) {
+        Bullet bullet = bullets.get(i);
+        bullet.move();
+        bullet.show();
+        if (bullet.position.x < 0 || bullet.position.x < width || bullet.position.y > 0 || bullet.position.y < height) {
+          bullet = null;
+        }
+      }
+
     }
 
   }
 
   void shootBullet() {
-    bullet = new Bullet(position, mouseX, mouseY);
+    bullets.add(new Bullet(position, mouseX, mouseY));
   }
 }
