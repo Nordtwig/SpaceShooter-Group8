@@ -5,6 +5,7 @@ class Player extends Spaceship {
   public Player (float x, float y) {
     super(x, y);
     bullets = new ArrayList<Bullet>();
+    size = 20;
     speed = 5;
     shipColor = color(0, 0, 168);
   }

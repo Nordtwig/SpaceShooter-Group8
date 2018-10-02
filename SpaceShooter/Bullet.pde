@@ -3,6 +3,7 @@ class Bullet {
   PVector direction;
 
   float speed;
+  float size = 5;
   int bulletColor;
 
   public Bullet (PVector shipPos, float directionX, float directionY) {
@@ -21,6 +22,6 @@ class Bullet {
 
   void show() {
     fill(bulletColor);
-    ellipse(position.x, position.y, 5, 5);
+    ellipse(position.x, position.y, size, size);
   }
 }

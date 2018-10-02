@@ -5,6 +5,7 @@ class Enemy extends Spaceship {
     super(x, y);
     position = new PVector(x, y);
     shipColor = color(255, 0, 0);
+    size = 30;
     speed = 3;
   }
 
