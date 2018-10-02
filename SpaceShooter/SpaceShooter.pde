@@ -15,30 +15,27 @@ void setup() {
 
 void draw() {
   background(0);
-  // collisionHandler();
-  println(enemies);
+  collisionHandler();
   player.move();
   player.show();
   for (int i = 0; i < enemies.size(); i++) {
-    Enemy enemy = enemies.get(i);
-    enemy.move();
-    enemy.show();
+    enemies.get(i).move();
+    enemies.get(i).show();
   }
 }
 
 void collisionHandler() {
   for (int i = 0; i < enemies.size(); i++) {
-    Enemy enemy = enemies.get(i);
     for (int j = 0; j < player.bullets.size(); j++) {
-     Bullet bullet = player.bullets.get(j);
-     boolean hasCollided = collision(enemy.position.x,
-                                     enemy.position.y,
-                                     enemy.size / 2,
-                                     bullet.position.x,
-                                     bullet.position.y,
-                                     bullet.size / 2);
+     boolean hasCollided = collision(enemies.get(i).position.x,
+                                     enemies.get(i).position.y,
+                                     enemies.get(i).size / 2,
+                                     player.bullets.get(j).position.x,
+                                     player.bullets.get(j).position.y,
+                                     player.bullets.get(j).size / 2);
       if (hasCollided) {
-        enemy.size = 25;
+        // enemies.remove(enemies.get(i));
+        enemies.get(i).size = 0;
       }
     }
   }

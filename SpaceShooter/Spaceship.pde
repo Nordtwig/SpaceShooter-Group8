@@ -5,7 +5,7 @@ class Spaceship {
 
   float speed;
   float size;
-  float shipColor;
+  int shipColor;
 
   public Spaceship (float x, float y) {
     position = new PVector(x, y);
