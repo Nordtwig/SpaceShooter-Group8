@@ -3,14 +3,15 @@ class Bullet {
   PVector direction;
 
   float speed;
+  int bulletColor;
 
   public Bullet (PVector shipPos, float directionX, float directionY) {
     position = new PVector(shipPos.x, shipPos.y);
     direction = new PVector(directionX, directionY);
-    direction.sub(position); //Tell Ulrik to use this for his enemy script.
+    direction.sub(position);
     direction.normalize();
     speed = 7;
-    println(direction);
+    bulletColor = color(250, 233, 5);
   }
 
   void move() {
@@ -19,6 +20,7 @@ class Bullet {
   }
 
   void show() {
+    fill(bulletColor);
     ellipse(position.x, position.y, 5, 5);
   }
 }
