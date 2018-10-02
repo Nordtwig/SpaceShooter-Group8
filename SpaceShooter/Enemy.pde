@@ -1,6 +1,7 @@
 class Enemy extends Spaceship {
   PVector playerDirection;
   ArrayList<Bullet> bullets;
+  boolean isDead = false;
 
   public Enemy (float x, float y) {
     super(x, y);
@@ -12,21 +13,21 @@ class Enemy extends Spaceship {
   }
 
   void move(){
-    followPlayer();
-    if (size > 0) {
+    if (!isDead) {
+      followPlayer();
       shootPlayer();
-    }
-    if (position.x > width){
-      position.x = 0;
-    }
-    else if(position.x < 0){
-      position.x = width;
-    }
-    if(position.y > height){
-      position.y = 0;
-    }
-    else if(position.y < 0){
-      position.y = height;
+      if (position.x > width){
+        position.x = 0;
+      }
+      else if(position.x < 0){
+        position.x = width;
+      }
+      if(position.y > height){
+        position.y = 0;
+      }
+      else if(position.y < 0){
+        position.y = height;
+      }      
     }
     if (bullets != null) {
       for (int i = 0; i < bullets.size(); i++) {
