@@ -27,17 +27,16 @@ class Enemy extends Spaceship {
       }
       else if(position.y < 0){
         position.y = height;
-      }      
-    }
-    if (bullets != null) {
-      for (int i = 0; i < bullets.size(); i++) {
-        Bullet bullet = bullets.get(i);
-        bullet.move();
-        bullet.show();
-        if (bullet.position.x < 0 || bullet.position.x < width || bullet.position.y > 0 || bullet.position.y < height) {
-          bullet = null;
-        }
       }
+    }
+    for (int i = 0; i < bullets.size(); i++) {
+      Bullet bullet = bullets.get(i);
+      if (bullet.position.x < 0 || bullet.position.x < width || bullet.position.y > 0 || bullet.position.y < height) {
+        bullets.remove(bullet);
+      }
+      bullet.move();
+      bullet.show();
+
     }
   }
 

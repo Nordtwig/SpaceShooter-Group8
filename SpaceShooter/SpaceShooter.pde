@@ -37,7 +37,17 @@ void collisionHandler() {
         // enemies.remove(enemies.get(i));
         enemies.get(i).isDead = true;
         enemies.get(i).size = 0;
+        player.bullets.get(j).size = 0;
       }
     }
+    boolean hasCollided = collision(enemies.get(i).position.x,
+                                    enemies.get(i).position.y,
+                                    enemies.get(i).size / 2,
+                                    player.position.x,
+                                    player.position.y,
+                                    player.size / 2);
+     if (hasCollided && enemies.get(i).size >= 0) {
+       player.size = 0;
+     }
   }
 }
