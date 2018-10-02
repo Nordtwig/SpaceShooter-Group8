@@ -13,7 +13,9 @@ class Enemy extends Spaceship {
 
   void move(){
     followPlayer();
-    shootPlayer();
+    if (size > 0) {
+      shootPlayer();
+    }
     if (position.x > width){
       position.x = 0;
     }
