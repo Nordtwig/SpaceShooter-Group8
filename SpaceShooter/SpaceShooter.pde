@@ -33,7 +33,7 @@ void collisionHandler() {
                                      player.bullets.get(j).position.x,
                                      player.bullets.get(j).position.y,
                                      player.bullets.get(j).size / 2);
-      if (hasCollided) {
+      if (hasCollided && enemies.get(i).size <= 0) {
         // enemies.remove(enemies.get(i));
         enemies.get(i).isDead = true;
         enemies.get(i).size = 0;
