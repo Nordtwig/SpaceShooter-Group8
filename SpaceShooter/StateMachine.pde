@@ -5,13 +5,6 @@ class StateMachine {
   }
 
   void startScreen() {
-    String aliasName1 = "Northwig";
-    String aliasName2 = "Vice";
-    String aliasName3 = "Flarne";
-    int highScore1 = 300;
-    int highScore2 = 20;
-    int highScore3 = 1;
-
     background(0);
 
     noFill();
@@ -38,14 +31,14 @@ class StateMachine {
     fill (0, 0, 255);
     textSize(30);
     textAlign(CENTER);
-    text ("HighScore", width / 2, 300);
+    text ("High Scores", width / 2, 300);
 
     fill (0, 0, 255);
     textSize(20);
     textAlign(LEFT);
-    text (aliasName1, 250, 350);
-    text (aliasName2, 250, 380);
-    text (aliasName3, 250, 410);
+    text (highScore1Name, 250, 350);
+    text (highScore2Name, 250, 380);
+    text (highScore3Name, 250, 410);
     textAlign(RIGHT);
     text (highScore1, 550, 350);
     text (highScore2, 550, 380);

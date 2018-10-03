@@ -1,21 +1,23 @@
 Player player;
 ArrayList<Enemy> enemies;
 StateMachine stateHandler;
-PrintWriter scoreKeeper;
+// PrintWriter scoreKeeper;
 NamePrompt name;
+Table scoreTable;
 
 int numberOfEnemies = 5;;
 int score = 0;
+String highScore1Name, highScore2Name, highScore3Name;
+int highScore1, highScore2, highScore3;
 
 void setup() {
   size(800, 800);
   stateHandler = new StateMachine();
   name = new NamePrompt(400, 400);
-  String[] prevScores = loadStrings("HighScore.txt");
-  scoreKeeper = createWriter("HighScore.txt");
-  for (int i = 0; i < prevScores.length; i++) {
-    scoreKeeper.println(prevScores[i]);
-  }
+  scoreTable = loadTable("HighScore.csv","header");
+  findHighScore1();
+  findHighScore2();
+  findHighScore3();
   resetGame();
 }
 
@@ -39,5 +41,8 @@ void resetGame() {
   for (int i = 0; i < numberOfEnemies; i++) {
    enemies.add(new Enemy(random(20, width -  20), random(20, height - 20)));
   }
+  findHighScore1();
+  findHighScore2();
+  findHighScore3();
   stateHandler.gameState = 0;
 }

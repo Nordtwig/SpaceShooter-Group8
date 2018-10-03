@@ -27,7 +27,10 @@ class NamePrompt {
       if (name == "") {
         name = "randomGuy";
       }
-      scoreKeeper.println(name + ": " + score);
+      TableRow newRow = scoreTable.addRow();
+      newRow.setInt("score", score);
+      newRow.setString("name", name);
+      saveTable(scoreTable,"HighScore.csv");
       resetGame();
     }
   }

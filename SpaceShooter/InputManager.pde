@@ -41,8 +41,6 @@ void keyReleased() {
 void mousePressed() {
   if (stateHandler.gameState == 0) {
     if (stateHandler.gameState == 0 && mouseX > 450 && mouseX < 600 && mouseY > 550 && mouseY < 610) {
-      scoreKeeper.flush();
-      scoreKeeper.close();
       exit();
     }
     else if (stateHandler.gameState == 0 && mouseX > 200 && mouseX < 350 && mouseY > 550 && mouseY < 610) {
