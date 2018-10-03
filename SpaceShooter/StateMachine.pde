@@ -84,8 +84,6 @@ class StateMachine {
   void endScreen() {
     background(0);
     name.show();
-    scoreKeeper.println(score);
-    scoreKeeper.flush();
-    scoreKeeper.close();
+    text(score, 400, 600);
   }
 }

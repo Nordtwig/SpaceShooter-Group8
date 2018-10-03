@@ -11,7 +11,7 @@ void setup() {
   size(800, 800);
   stateHandler = new StateMachine();
   name = new NamePrompt(400, 400);
-  scoreKeeper = createWriter("HighScore.txt");
+  scoreKeeper = new PrintWriter(new BufferedWriter(new FileWriter("HighScore.txt", true)));
   resetGame();
 }
 

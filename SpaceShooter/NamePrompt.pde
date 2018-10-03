@@ -27,6 +27,9 @@ class NamePrompt {
       if (name == "") {
         name = "randomGuy";
       }
+      scoreKeeper.println(name + ": " + score);
+      scoreKeeper.flush();
+      scoreKeeper.close();
       resetGame();
     }
   }
