@@ -1,25 +1,25 @@
 Player player;
 ArrayList<Enemy> enemies;
+StateMachine gameManager;
 
 int numberOfEnemies = 5;
 
 void setup() {
   size(800, 800);
+  gameManager = new StateMachine();
   player = new Player(width / 2, height / 2);
-  enemies = new ArrayList<Enemy>();  
+  enemies = new ArrayList<Enemy>();
   for (int i = 0; i < numberOfEnemies; i++) {
    enemies.add(new Enemy(random(20, width -  20), random(20, height - 20)));
   }
-
+  gameManager.gameState = 0;
 }
 
 void draw() {
-  background(0);
-  collisionHandler();
-  player.move();
-  player.show();
-  for (int i = 0; i < enemies.size(); i++) {
-    enemies.get(i).move();
-    enemies.get(i).show();
+  if (gameManager.gameState == 0) {
+    gameManager.startScreen();
+  }
+  else if (gameManager.gameState == 1) {
+    gameManager.gameScreen();
   }
 }

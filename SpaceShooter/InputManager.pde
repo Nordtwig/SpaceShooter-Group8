@@ -35,9 +35,31 @@ void keyReleased() {
 }
 
 void mousePressed() {
-  isShooting = true;
+  if (gameManager.gameState == 0) {
+    if (gameManager.gameState == 0 && mouseX > 450 && mouseX < 600 && mouseY > 550 && mouseY < 610) {
+      exit();
+    }
+    else if (gameManager.gameState == 0 && mouseX > 200 && mouseX < 350 && mouseY > 550 && mouseY < 610) {
+      gameManager.gameState = 1;
+    }
+  }
+
+  else if (gameManager.gameState == 1){
+    isShooting = true;
+  }
 }
 
 void mouseReleased() {
-  isShooting = false;
+  if (gameManager.gameState == 1) {
+    isShooting = false;
+  }
+}
+
+void hoverOver() {
+  if (gameManager.gameState == 0 && mouseX > 450 && mouseX < 600 && mouseY > 550 && mouseY < 610) {
+    cursor(HAND);
+  }
+  else if (gameManager.gameState == 0 && mouseX > 200 && mouseX < 350 && mouseY > 550 && mouseY < 610) {
+    cursor(HAND);
+  }
 }
