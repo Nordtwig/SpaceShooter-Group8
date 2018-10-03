@@ -1,30 +1,37 @@
 class Player extends Spaceship {
   ArrayList<Bullet> bullets;
   float angle;
+  boolean isDead = false;
+  int frameCounter;
+  int fireRate;
 
   public Player (float x, float y) {
     super(x, y);
     bullets = new ArrayList<Bullet>();
     size = 20;
     speed = 5;
+    frameCounter = 0;
+    fireRate = 10;
     shipColor = color(0, 0, 168);
   }
 
   void move() {
-    if (moveLeft) {
-      position.x -= velocity.x * speed;
-    }
-    if (moveRight) {
-      position.x += velocity.x * speed;
-    }
-    if (moveUp) {
-      position.y -= velocity.y * speed;
-    }
-    if (moveDown) {
-      position.y += velocity.y * speed;
-    }
-    if (isShooting) {
-      shootBullet();
+    if (!isDead) {
+      if (moveLeft) {
+        position.x -= velocity.x * speed;
+      }
+      if (moveRight) {
+        position.x += velocity.x * speed;
+      }
+      if (moveUp) {
+        position.y -= velocity.y * speed;
+      }
+      if (moveDown) {
+        position.y += velocity.y * speed;
+      }
+      if (isShooting) {
+        shootBullet();
+      }
     }
     if (bullets != null) {
       for (int i = 0; i < bullets.size(); i++) {
@@ -49,9 +56,13 @@ class Player extends Spaceship {
     else if(position.y < 0){
       position.y = height;
     }
+    frameCounter++;
   }
 
   void shootBullet() {
-    bullets.add(new Bullet(position, mouseX, mouseY));
+    if (frameCounter >= fireRate) {
+      bullets.add(new Bullet(position, mouseX, mouseY));
+      frameCounter= 0;
+    }
   }
 }

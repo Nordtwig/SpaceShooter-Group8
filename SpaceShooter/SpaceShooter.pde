@@ -8,7 +8,7 @@ void setup() {
   enemies = new ArrayList<Enemy>();
   player = new Player(width / 2, height / 2);
   for (int i = 0; i < numberOfEnemies; i++) {
-   enemies.add(new Enemy(random(20, width - 20), random(20, height - 20)));
+   enemies.add(new Enemy(random(20, width -  20), random(20, height - 20)));
   }
 
 }
@@ -48,6 +48,7 @@ void collisionHandler() {
                                     player.size / 2);
      if (hasCollided && enemies.get(i).size >= 0) {
        player.size = 0;
+       player.isDead = true;
      }
   }
 }

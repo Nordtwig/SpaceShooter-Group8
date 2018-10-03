@@ -2,6 +2,8 @@ class Enemy extends Spaceship {
   PVector playerDirection;
   ArrayList<Bullet> bullets;
   boolean isDead = false;
+  int frameCounter;
+  int fireRate;
 
   public Enemy (float x, float y) {
     super(x, y);
@@ -9,7 +11,9 @@ class Enemy extends Spaceship {
     bullets = new ArrayList<Bullet>();
     shipColor = color(255, 0, 0);
     size = 30;
-    speed = 3;
+    speed = 2;
+    frameCounter = 0;
+    fireRate = 20;
   }
 
   void move(){
@@ -31,13 +35,10 @@ class Enemy extends Spaceship {
     }
     for (int i = 0; i < bullets.size(); i++) {
       Bullet bullet = bullets.get(i);
-      if (bullet.position.x < 0 || bullet.position.x < width || bullet.position.y > 0 || bullet.position.y < height) {
-        bullets.remove(bullet);
-      }
       bullet.move();
       bullet.show();
-
     }
+    frameCounter++;
   }
 
   void followPlayer(){
@@ -49,6 +50,9 @@ class Enemy extends Spaceship {
   }
 
   void shootPlayer() {
-    bullets.add(new Bullet(position, player.position.x, player.position.y));
+    if (frameCounter >= fireRate) {
+      bullets.add(new Bullet(position, player.position.x, player.position.y));
+      frameCounter = 0;
+    }
   }
 }
