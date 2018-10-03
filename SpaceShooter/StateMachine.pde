@@ -82,6 +82,9 @@ class StateMachine {
   }
 
   void endScreen() {
-
+    background(0);
+    scoreKeeper.println(score);
+    scoreKeeper.flush();
+    scoreKeeper.close();
   }
 }

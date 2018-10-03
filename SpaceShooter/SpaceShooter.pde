@@ -1,12 +1,15 @@
 Player player;
 ArrayList<Enemy> enemies;
 StateMachine gameManager;
+PrintWriter scoreKeeper;
 
-int numberOfEnemies = 5;
+int numberOfEnemies = 5;;
+int score = 0;
 
 void setup() {
   size(800, 800);
   gameManager = new StateMachine();
+  scoreKeeper = createWriter("HighScore.txt");
   player = new Player(width / 2, height / 2);
   enemies = new ArrayList<Enemy>();
   for (int i = 0; i < numberOfEnemies; i++) {

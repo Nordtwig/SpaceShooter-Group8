@@ -26,6 +26,7 @@ void collisionHandler() {
         enemies.get(i).isDead = true;
         enemies.get(i).size = 0;
         player.bullets.get(j).size = 0;
+        score += 10;
       }
     }
     boolean enemyPlayer = collision(enemies.get(i).position.x,
@@ -50,6 +51,7 @@ void collisionHandler() {
           player.isDead = true;
           player.size = 0;
           enemies.get(i).bullets.get(j).size = 0;
+
         }
      }
   }
