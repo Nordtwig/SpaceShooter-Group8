@@ -176,3 +176,4 @@ class Menu {
       text ("No", 525, 575);
       text ("Quit", width / 2, 715);
   }
+}

@@ -75,8 +75,39 @@ class StateMachine {
   }
 
   void endScreen() {
+    PFont font;
+    font = createFont("Tahoma Fet", 80);
     background(0);
+    textFont(font);
+
+    fill(0, 0, 255);
+    //textSize(80);
+    textAlign(CENTER, CENTER);
+    text("Game Over!", width / 2, 250);
+
+    fill(0, 255, 0);
+    textSize(30);
+    textAlign(LEFT, 360);
+    text("You're score ->", 100, 360);
+    fill(255, 0, 0);
+    textAlign(RIGHT, 360);
+    text(score, 700, 360);
+
+    fill(0, 255, 0);
+    textAlign(LEFT, 440);
+    text("Enter you're name ->", 100, 440);
+    textAlign(RIGHT, 440);
     name.show();
-    text(score, 400, 600);
+    // text("Box here", 700, 440);
+
+    stroke(132, 5, 2);
+    strokeWeight(5);
+    fill(255, 255, 255);
+    rect(325, 500, 150, 60, 10);
+    fill(0, 0, 255);
+    textSize(20);
+    textAlign(CENTER, CENTER);
+    text("Menu", width / 2, 525);
+
   }
 }

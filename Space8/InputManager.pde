@@ -40,10 +40,10 @@ void keyReleased() {
 
 void mousePressed() {
   if (stateHandler.gameState == 0) {
-    if (stateHandler.gameState == 0 && mouseX > 450 && mouseX < 600 && mouseY > 550 && mouseY < 610) {
+    if (mouseX > 450 && mouseX < 600 && mouseY > 550 && mouseY < 610) {
       exit();
     }
-    else if (stateHandler.gameState == 0 && mouseX > 200 && mouseX < 350 && mouseY > 550 && mouseY < 610) {
+    else if (mouseX > 200 && mouseX < 350 && mouseY > 550 && mouseY < 610) {
       stateHandler.gameState = 1;
     }
   }
@@ -51,7 +51,16 @@ void mousePressed() {
     isShooting = true;
   }
   else if (stateHandler.gameState == 2) {
-
+    if (mouseX > 325 && mouseX < 475 && mouseY > 500 && mouseY < 560) {
+      if (name.name == "") {
+        name.name = "randomGuy";
+      }
+      TableRow newRow = scoreTable.addRow();
+      newRow.setInt("score", score);
+      newRow.setString("name", name.name);
+      saveTable(scoreTable,"HighScore.csv");
+      resetGame();
+    }
   }
 }
 

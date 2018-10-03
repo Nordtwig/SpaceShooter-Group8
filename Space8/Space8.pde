@@ -13,7 +13,7 @@ int highScore1, highScore2, highScore3;
 void setup() {
   size(800, 800);
   stateHandler = new StateMachine();
-  name = new NamePrompt(400, 400);
+  name = new NamePrompt(700, 440);
   scoreTable = loadTable("HighScore.csv","header");
   findHighScore1();
   findHighScore2();
