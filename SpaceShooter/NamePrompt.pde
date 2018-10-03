@@ -28,8 +28,6 @@ class NamePrompt {
         name = "randomGuy";
       }
       scoreKeeper.println(name + ": " + score);
-      scoreKeeper.flush();
-      scoreKeeper.close();
       resetGame();
     }
   }

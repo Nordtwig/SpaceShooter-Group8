@@ -11,7 +11,11 @@ void setup() {
   size(800, 800);
   stateHandler = new StateMachine();
   name = new NamePrompt(400, 400);
-  scoreKeeper = new PrintWriter(new BufferedWriter(new FileWriter("HighScore.txt", true)));
+  String[] prevScores = loadStrings("HighScore.txt");
+  scoreKeeper = createWriter("HighScore.txt");
+  for (int i = 0; i < prevScores.length; i++) {
+    scoreKeeper.println(prevScores[i]);
+  }
   resetGame();
 }
 
