@@ -4,6 +4,8 @@ class Player extends Spaceship {
   boolean isDead = false;
   int frameCounter;
   int fireRate;
+  int scoreTimer;
+  int scoreRate;
 
   public Player (float x, float y) {
     super(x, y);
@@ -12,10 +14,16 @@ class Player extends Spaceship {
     speed = 5;
     frameCounter = 0;
     fireRate = 10;
+    scoreTimer = 0;
+    scoreRate = 5;
     shipColor = color(0, 0, 168);
   }
 
   void move() {
+    if (scoreTimer >= scoreRate) {
+      score++;
+      scoreTimer = 0;
+    }
     if (!isDead) {
       if (moveLeft) {
         position.x -= velocity.x * speed;
@@ -57,6 +65,7 @@ class Player extends Spaceship {
       position.y = height;
     }
     frameCounter++;
+    scoreTimer++;
   }
 
   void shootBullet() {

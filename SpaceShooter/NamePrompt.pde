@@ -1,14 +1,17 @@
 class NamePrompt {
   String name;
   char letter;
+  int x, y;
 
-  public NamePrompt () {
+  public NamePrompt (int xPos, int yPos) {
     name = "";
+    x = xPos;
+    y = yPos;
   }
 
   void show() {
-    fill(128);
-    text(name, 400, 400);
+    fill(200, 0, 0);
+    text(name, x, y);
   }
 
   void keyListener(char keyInput, int code) {
@@ -17,8 +20,14 @@ class NamePrompt {
       letter = key;
       name += key;
     }
-    else if (code == BACKSPACE) {
+    else if (code == BACKSPACE && name.length() > 0) {
       name = name.substring(0, name.length()-1);
+    }
+    else if (code == ENTER) {
+      if (name == "") {
+        name = "randomGuy";
+      }
+      resetGame();
     }
   }
 }

@@ -71,6 +71,8 @@ class StateMachine {
   void gameScreen() {
     background(0);
     collisionHandler();
+    fill(255);
+    text(score, width - 30, 20);
     player.move();
     player.show();
     for (int i = 0; i < enemies.size(); i++) {

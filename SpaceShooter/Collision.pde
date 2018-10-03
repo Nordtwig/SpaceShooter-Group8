@@ -51,7 +51,7 @@ void collisionHandler() {
           player.isDead = true;
           player.size = 0;
           enemies.get(i).bullets.get(j).size = 0;
-          gameManager.gameState = 2;
+          stateHandler.gameState = 2;
         }
      }
   }
