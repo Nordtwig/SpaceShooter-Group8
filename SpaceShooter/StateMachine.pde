@@ -1,9 +1,7 @@
 class StateMachine {
   int gameState = 0;
-  String wannaPlay = "Wanna play?";
 
   public StateMachine () {
-
   }
 
   void startScreen() {
@@ -56,7 +54,7 @@ class StateMachine {
     fill (255, 255, 255);
     textSize (20);
     textAlign (CENTER);
-    text (wannaPlay, width / 2, 500);
+    text ("Wanna play?", width / 2, 500);
     fill (68, 119, 1);
     rect (200, 550, 150, 60, 10);
     fill (255, 0, 0);
@@ -83,6 +81,7 @@ class StateMachine {
 
   void endScreen() {
     background(0);
+    name.show();
     scoreKeeper.println(score);
     scoreKeeper.flush();
     scoreKeeper.close();

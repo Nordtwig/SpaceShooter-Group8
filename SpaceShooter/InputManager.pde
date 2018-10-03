@@ -17,6 +17,10 @@ void keyPressed() {
   if (key == 's' || key == 'S') {
     moveDown = true;
   }
+
+  if (gameManager.gameState == 2) {
+    name.keyListener(key, keyCode);
+  }
 }
 
 void keyReleased() {
@@ -43,9 +47,11 @@ void mousePressed() {
       gameManager.gameState = 1;
     }
   }
-
   else if (gameManager.gameState == 1){
     isShooting = true;
+  }
+  else if (gameManager.gameState == 2) {
+
   }
 }
 

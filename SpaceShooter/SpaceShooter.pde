@@ -2,6 +2,7 @@ Player player;
 ArrayList<Enemy> enemies;
 StateMachine gameManager;
 PrintWriter scoreKeeper;
+NamePrompt name;
 
 int numberOfEnemies = 5;;
 int score = 0;
@@ -9,6 +10,7 @@ int score = 0;
 void setup() {
   size(800, 800);
   gameManager = new StateMachine();
+  name = new NamePrompt();
   scoreKeeper = createWriter("HighScore.txt");
   player = new Player(width / 2, height / 2);
   enemies = new ArrayList<Enemy>();
@@ -24,5 +26,8 @@ void draw() {
   }
   else if (gameManager.gameState == 1) {
     gameManager.gameScreen();
+  }
+  else if (gameManager.gameState == 2) {
+    gameManager.endScreen();
   }
 }
