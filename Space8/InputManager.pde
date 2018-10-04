@@ -41,6 +41,10 @@ void keyReleased() {
 void mousePressed() {
   if (stateHandler.gameState == 0) {
     if (mouseX > 450 && mouseX < 600 && mouseY > 550 && mouseY < 610) {
+      background(0);
+      fill(200, 0, 0);
+      text("Shutting Down...", width / 2, height / 2);
+      soundTrack.stop();
       exit();
     }
     else if (mouseX > 200 && mouseX < 350 && mouseY > 550 && mouseY < 610) {

@@ -1,9 +1,14 @@
+import processing.sound.*;
+
 Player player;
 ArrayList<Enemy> enemies;
 StateMachine stateHandler;
 // PrintWriter scoreKeeper;
 NamePrompt name;
 Table scoreTable;
+SoundFile soundTrack;
+SoundFile enemySound;
+SoundFile playerSound;
 
 int numberOfEnemies = 10;;
 int score = 0;
@@ -15,6 +20,7 @@ void setup() {
   size(800, 800);
   stateHandler = new StateMachine();
   name = new NamePrompt(700, 440);
+  musicBox();
   scoreTable = loadTable("HighScore.csv","header");
   findHighScore1();
   findHighScore2();
@@ -59,4 +65,22 @@ float randomPosition(float pos, float axis) {
         spawnPos = max;
     }
     return spawnPos;
+}
+
+void musicBox() {
+  soundTrack = new SoundFile(this, "space8TrackShort.wav");
+  soundTrack.amp(0.5);
+  soundTrack.loop();
+}
+
+void bulletSound(int shooter) {
+  enemySound = new SoundFile(this, "pew1.wav");
+  playerSound = new SoundFile(this, "pew2.wav");
+  playerSound.amp(1);
+  if (shooter == 0) {
+    enemySound.play();
+  }
+  if (shooter == 1) {
+    playerSound.play();
+  }
 }

@@ -67,6 +67,7 @@ class Player extends Spaceship {
 
   void shootBullet() {
     if (frameCounter >= fireRate) {
+      bulletSound(1);
       bullets.add(new Bullet(position, mouseX, mouseY, 6));
       frameCounter= 0;
     }
