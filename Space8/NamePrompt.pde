@@ -16,11 +16,13 @@ class NamePrompt {
 
   void keyListener(char keyInput, int code) {
     key = keyInput;
-    if ((key >= 'A' && key <= 'z') || key >= '0' && key <= '9') {
-      letter = key;
-      name += key;
+    if (name.length() <= 12) {
+      if ((key >= 'A' && key <= 'z') || key >= '0' && key <= '9') {
+        letter = key;
+        name += key;
+      }
     }
-    else if (code == BACKSPACE && name.length() > 0) {
+    if (code == BACKSPACE && name.length() > 0) {
       name = name.substring(0, name.length()-1);
     }
     else if (code == ENTER) {

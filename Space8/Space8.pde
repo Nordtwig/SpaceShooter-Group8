@@ -41,7 +41,6 @@ void resetGame() {
   enemies = new ArrayList<Enemy>();
   for (int i = 0; i < numberOfEnemies; i++) {
    enemies.add(new Enemy(randomPosition(player.position.x, width), randomPosition(player.position.y, height), int(random(1, 4))));
-   println(enemies.get(i).type);
   }
   findHighScore1();
   findHighScore2();
