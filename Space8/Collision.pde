@@ -22,11 +22,11 @@ void collisionHandler() {
                                      player.bullets.get(j).position.y,
                                      player.bullets.get(j).size / 2);
       if (enemyHit && enemies.get(i).size >= 0) {
-        // enemies.remove(enemies.get(i));
         enemies.get(i).isDead = true;
         enemies.get(i).size = 0;
         player.bullets.get(j).size = 0;
-        score += 10;
+        score += 50;
+        numberOfEnemies--;
       }
     }
     boolean enemyPlayer = collision(enemies.get(i).position.x,

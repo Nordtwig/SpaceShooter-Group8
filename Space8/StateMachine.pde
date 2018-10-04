@@ -1,5 +1,7 @@
 class StateMachine {
   int gameState = 0;
+  int  frameCounter;
+  int waveRate = 700;
 
   public StateMachine () {
   }
@@ -68,10 +70,26 @@ class StateMachine {
     text(score, width - 30, 20);
     player.move();
     player.show();
+    if (numberOfEnemies <= 0) {
+      numberOfEnemies = 8;
+      for (int i = 0; i < numberOfEnemies; i++) {
+        enemies.add(new Enemy(random(-50, width +  50), random(-50, height + 50), int(random(1, 4))));
+        println(enemies.get(i).type);        
+      }
+    }
+    else if (frameCounter >= waveRate) {
+      frameCounter = 0;
+      for (int i = 0; i < 5; i++) {
+        numberOfEnemies++;
+        enemies.add(new Enemy(random(-50, width +  50), random(-50, height + 50), int(random(1, 4))));
+        println(enemies.get(i).type);
+      }
+    }
     for (int i = 0; i < enemies.size(); i++) {
       enemies.get(i).move();
       enemies.get(i).show();
     }
+    frameCounter++;
   }
 
   void endScreen() {
@@ -108,6 +126,5 @@ class StateMachine {
     textSize(20);
     textAlign(CENTER, CENTER);
     text("Menu", width / 2, 525);
-
   }
 }

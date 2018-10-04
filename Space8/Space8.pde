@@ -5,7 +5,7 @@ StateMachine stateHandler;
 NamePrompt name;
 Table scoreTable;
 
-int numberOfEnemies = 5;;
+int numberOfEnemies = 10;;
 int score = 0;
 String highScore1Name, highScore2Name, highScore3Name;
 int highScore1, highScore2, highScore3;
@@ -39,7 +39,8 @@ void resetGame() {
   player = new Player(width / 2, height / 2);
   enemies = new ArrayList<Enemy>();
   for (int i = 0; i < numberOfEnemies; i++) {
-   enemies.add(new Enemy(random(20, width -  20), random(20, height - 20)));
+   enemies.add(new Enemy(random(-50, width +  50), random(-50, height + 50), int(random(1, 4))));
+   println(enemies.get(i).type);
   }
   findHighScore1();
   findHighScore2();

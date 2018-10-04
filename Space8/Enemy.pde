@@ -4,21 +4,29 @@ class Enemy extends Spaceship {
   boolean isDead = false;
   int frameCounter;
   int fireRate;
+  int type;
 
-  public Enemy (float x, float y) {
+  public Enemy (float x, float y, int enemyType) {
     super(x, y);
     position = new PVector(x, y);
     bullets = new ArrayList<Bullet>();
-    shipColor = color(255, 0, 0);
+    type = enemyType;
     size = 30;
-    speed = 2;
     frameCounter = 0;
     fireRate = 20;
   }
 
   void move(){
     if (!isDead) {
-      followPlayer();
+      if (type == 1) {
+        stalkerEnemy();
+      }
+      if (type == 2) {
+        shooterEnemy();
+      }
+      if (type == 3) {
+        staticEnemy();
+      }
       shootPlayer();
       if (position.x > width){
         position.x = 0;
@@ -43,6 +51,24 @@ class Enemy extends Spaceship {
     frameCounter++;
   }
 
+  void stalkerEnemy() {
+    shipColor = color(255, 0, 0);
+    speed = 4;
+    followPlayer();
+  }
+
+  void shooterEnemy() {
+    shipColor = color(128, 128, 0);
+    speed = 2;
+    shootPlayer();
+    followPlayer();
+  }
+
+  void staticEnemy() {
+    shipColor = color(200, 128, 0);
+    shootPlayer();
+  }
+
   void followPlayer(){
     playerDirection = new PVector(player.position.x, player.position.y);
     playerDirection.sub(position);
@@ -53,7 +79,7 @@ class Enemy extends Spaceship {
 
   void shootPlayer() {
     if (frameCounter >= fireRate) {
-      bullets.add(new Bullet(position, player.position.x, player.position.y));
+      bullets.add(new Bullet(position, player.position.x, player.position.y, 5));
       frameCounter = 0;
     }
   }

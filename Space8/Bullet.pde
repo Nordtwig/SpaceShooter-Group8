@@ -6,12 +6,12 @@ class Bullet {
   float size = 5;
   int bulletColor;
 
-  public Bullet (PVector shipPos, float directionX, float directionY) {
+  public Bullet (PVector shipPos, float directionX, float directionY, int bulletSpeed) {
     position = new PVector(shipPos.x, shipPos.y);
     direction = new PVector(directionX, directionY);
     direction.sub(position);
     direction.normalize();
-    speed = 7;
+    speed = bulletSpeed;
     bulletColor = color(250, 233, 5);
   }
 
