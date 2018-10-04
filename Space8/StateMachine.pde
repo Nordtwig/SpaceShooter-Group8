@@ -73,16 +73,14 @@ class StateMachine {
     if (numberOfEnemies <= 0) {
       numberOfEnemies = 8;
       for (int i = 0; i < numberOfEnemies; i++) {
-        enemies.add(new Enemy(random(-50, width +  50), random(-50, height + 50), int(random(1, 4))));
-        println(enemies.get(i).type);        
+        enemies.add(new Enemy(randomPosition(player.position.x, width), randomPosition(player.position.y, height), int(random(1, 4))));
       }
     }
     else if (frameCounter >= waveRate) {
       frameCounter = 0;
       for (int i = 0; i < 5; i++) {
         numberOfEnemies++;
-        enemies.add(new Enemy(random(-50, width +  50), random(-50, height + 50), int(random(1, 4))));
-        println(enemies.get(i).type);
+        enemies.add(new Enemy(randomPosition(player.position.x, width), randomPosition(player.position.y, height), int(random(1, 4))));
       }
     }
     for (int i = 0; i < enemies.size(); i++) {
