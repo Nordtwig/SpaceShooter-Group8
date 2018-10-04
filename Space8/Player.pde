@@ -41,14 +41,11 @@ class Player extends Spaceship {
         shootBullet();
       }
     }
-    if (bullets != null) {
-      for (int i = 0; i < bullets.size(); i++) {
-        Bullet bullet = bullets.get(i);
+    for (int i = 0; i < bullets.size(); i++) {
+      Bullet bullet = bullets.get(i);
+      if (bullet.size > 0) {
         bullet.move();
         bullet.show();
-        if (bullet.position.x < 0 || bullet.position.x < width || bullet.position.y > 0 || bullet.position.y < height) {
-          bullet = null;
-        }
       }
     }
     if (position.x > width){
