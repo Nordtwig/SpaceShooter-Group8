@@ -99,7 +99,7 @@ class Enemy extends Spaceship {
   void shootPlayer() {
     if (frameCounter >= fireRate) {
       // bulletSound(0);
-      bullets.add(new Bullet(position, player.position.x, player.position.y, 5, shipColor));
+      bullets.add(new Bullet(position, player.position.x, player.position.y, 4, shipColor));
       frameCounter = 0;
     }
   }

@@ -1,7 +1,7 @@
 class StateMachine {
   int gameState = 0;
   int  frameCounter;
-  int waveRate = 700;
+  int waveRate = 500;
 
   public StateMachine () {
   }
