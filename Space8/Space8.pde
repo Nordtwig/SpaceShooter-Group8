@@ -21,7 +21,7 @@ void setup() {
   stateHandler = new StateMachine();
   name = new NamePrompt(700, 440);
   musicBox();
-  scoreTable = loadTable("HighScore.csv","header");
+  scoreTable = loadTable("data/HighScore.csv","header");
   findHighScore1();
   findHighScore2();
   findHighScore3();
@@ -68,13 +68,13 @@ float randomPosition(float pos, float axis) {
 }
 
 void musicBox() {
-  soundTrack = new SoundFile(this, "Audio/space8TrackShort.wav");
+  soundTrack = new SoundFile(this, "data/audio/space8TrackShort.wav");
   soundTrack.loop();
 }
 
 void bulletSound(int shooter) {
-  enemySound = new SoundFile(this, "Audio/pew1.wav");
-  playerSound = new SoundFile(this, "Audio/pew2.wav");
+  enemySound = new SoundFile(this, "data/audio/pew1.wav");
+  playerSound = new SoundFile(this, "data/audio/pew2.wav");
   if (shooter == 0) {
     enemySound.play();
   }
