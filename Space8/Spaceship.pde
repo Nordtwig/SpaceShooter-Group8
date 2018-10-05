@@ -14,10 +14,4 @@ class Spaceship {
     shipColor = color(128);
     ellipseMode(CENTER);
   }
-
-  void show() {
-    fill(shipColor);
-    noStroke();
-    ellipse(position.x, position.y, size, size);
-  }
 }

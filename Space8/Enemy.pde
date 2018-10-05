@@ -51,6 +51,12 @@ class Enemy extends Spaceship {
     frameCounter++;
   }
 
+  void show() {
+    fill(shipColor);
+    noStroke();
+    ellipse(position.x, position.y, size, size);
+  }
+
   void stalkerEnemy() {
     shipColor = color(255, 0, 0);
     speed = 4;

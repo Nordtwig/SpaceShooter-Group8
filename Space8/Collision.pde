@@ -35,7 +35,10 @@ void collisionHandler() {
                                     player.position.y,
                                     player.size / 2);
      if (enemyPlayer && !enemies.get(i).isDead) {
-       player.isDead = true;
+       if (!player.isShielded) {
+         player.isDead = true;
+       }
+       player.isShielded = false;
      }
      for (int j = 0; j < enemies.get(i).bullets.size(); j++) {
        boolean playerHit = collision(enemies.get(i).bullets.get(j).position.x,
@@ -46,10 +49,12 @@ void collisionHandler() {
                                        player.size / 2);
         if (playerHit && !player.isDead) {
           // enemies.remove(enemies.get(i));
-          player.isDead = true;
-          player.size = 0;
+          if (!player.isShielded) {
+            player.isDead = true;
+            stateHandler.gameState = 2;
+          }
+          player.isShielded = false;
           enemies.get(i).bullets.get(j).isVoid = true;
-          stateHandler.gameState = 2;
         }
      }
   }

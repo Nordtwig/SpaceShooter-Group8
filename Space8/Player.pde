@@ -6,7 +6,7 @@ class Player extends Spaceship {
   int fireRate;
   int scoreTimer;
   int scoreRate;
-  int playerHealth;
+  boolean isShielded = true;
 
   public Player (float x, float y) {
     super(x, y);
@@ -64,6 +64,16 @@ class Player extends Spaceship {
     }
     frameCounter++;
     scoreTimer++;
+  }
+
+  void show() {
+    noStroke();
+    if (isShielded) {
+      fill(100, 100, 200);
+      ellipse(position.x, position.y, size + 7, size + 7);
+    }
+    fill(shipColor);
+    ellipse(position.x, position.y, size, size);
   }
 
   void shootBullet() {
