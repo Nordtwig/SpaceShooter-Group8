@@ -23,9 +23,23 @@ class Enemy extends Spaceship {
       }
       if (type == 2) {
         shooterEnemy();
+        for (int i = 0; i < bullets.size(); i++) {
+          Bullet bullet = bullets.get(i);
+          if (!bullet.isVoid) {
+            bullet.move();
+            bullet.show();
+          }
+        }
       }
       if (type == 3) {
         staticEnemy();
+        for (int i = 0; i < bullets.size(); i++) {
+          Bullet bullet = bullets.get(i);
+          if (!bullet.isVoid) {
+            bullet.move();
+            bullet.show();
+          }
+        }
       }
       shootPlayer();
       if (position.x > width){
@@ -39,13 +53,6 @@ class Enemy extends Spaceship {
       }
       else if(position.y < 0){
         position.y = height;
-      }
-    }
-    for (int i = 0; i < bullets.size(); i++) {
-      Bullet bullet = bullets.get(i);
-      if (!bullet.isVoid) {
-        bullet.move();
-        bullet.show();
       }
     }
     frameCounter++;

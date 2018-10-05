@@ -32,7 +32,7 @@ class NamePrompt {
       TableRow newRow = scoreTable.addRow();
       newRow.setInt("score", score);
       newRow.setString("name", name);
-      saveTable(scoreTable,"HighScore.csv");
+      saveTable(scoreTable,"data/HighScore.csv");
       resetGame();
     }
   }
