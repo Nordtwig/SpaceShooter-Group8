@@ -43,7 +43,7 @@ class Enemy extends Spaceship {
     }
     for (int i = 0; i < bullets.size(); i++) {
       Bullet bullet = bullets.get(i);
-      if (bullet.size > 0) {
+      if (!bullet.isVoid) {
         bullet.move();
         bullet.show();
       }

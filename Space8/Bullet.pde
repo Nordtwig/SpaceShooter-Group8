@@ -2,6 +2,8 @@ class Bullet {
   PVector position;
   PVector direction;
 
+  boolean isVoid = false;
+
   float speed;
   float size = 5;
   int bulletColor;

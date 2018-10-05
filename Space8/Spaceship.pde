@@ -12,6 +12,7 @@ class Spaceship {
     velocity = new PVector(1, 1);
     size = 20;
     shipColor = color(128);
+    ellipseMode(CENTER);
   }
 
   void show() {

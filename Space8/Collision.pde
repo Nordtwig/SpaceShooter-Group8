@@ -21,10 +21,9 @@ void collisionHandler() {
                                      player.bullets.get(j).position.x,
                                      player.bullets.get(j).position.y,
                                      player.bullets.get(j).size / 2);
-      if (enemyHit && enemies.get(i).size >= 0) {
+      if (enemyHit && !enemies.get(i).isDead) {
         enemies.get(i).isDead = true;
-        enemies.get(i).size = 0;
-        player.bullets.get(j).size = 0;
+        player.bullets.get(j).isVoid = true;
         score += 50;
         numberOfEnemies--;
       }
@@ -35,8 +34,7 @@ void collisionHandler() {
                                     player.position.x,
                                     player.position.y,
                                     player.size / 2);
-     if (enemyPlayer && enemies.get(i).size >= 0) {
-       player.size = 0;
+     if (enemyPlayer && !enemies.get(i).isDead) {
        player.isDead = true;
      }
      for (int j = 0; j < enemies.get(i).bullets.size(); j++) {
@@ -46,11 +44,11 @@ void collisionHandler() {
                                        player.position.x,
                                        player.position.y,
                                        player.size / 2);
-        if (playerHit && player.size >= 0) {
+        if (playerHit && !player.isDead) {
           // enemies.remove(enemies.get(i));
           player.isDead = true;
           player.size = 0;
-          enemies.get(i).bullets.get(j).size = 0;
+          enemies.get(i).bullets.get(j).isVoid = true;
           stateHandler.gameState = 2;
         }
      }

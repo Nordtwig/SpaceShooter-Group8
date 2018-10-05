@@ -6,6 +6,7 @@ class Player extends Spaceship {
   int fireRate;
   int scoreTimer;
   int scoreRate;
+  int playerHealth;
 
   public Player (float x, float y) {
     super(x, y);
@@ -43,7 +44,7 @@ class Player extends Spaceship {
     }
     for (int i = 0; i < bullets.size(); i++) {
       Bullet bullet = bullets.get(i);
-      if (bullet.size > 0) {
+      if (!bullet.isVoid) {
         bullet.move();
         bullet.show();
       }

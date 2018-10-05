@@ -68,8 +68,10 @@ class StateMachine {
     collisionHandler();
     fill(255);
     text(score, width - 30, 20);
-    player.move();
-    player.show();
+    if (!player.isDead) {
+      player.move();
+      player.show();
+    }
     if (numberOfEnemies <= 0) {
       numberOfEnemies = 8;
       for (int i = 0; i < numberOfEnemies; i++) {
@@ -84,8 +86,10 @@ class StateMachine {
       }
     }
     for (int i = 0; i < enemies.size(); i++) {
-      enemies.get(i).move();
-      enemies.get(i).show();
+      if (!enemies.get(i).isDead) {
+        enemies.get(i).show();
+      }
+      enemies.get(i).move();      
     }
     frameCounter++;
   }
