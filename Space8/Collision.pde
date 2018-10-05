@@ -40,6 +40,7 @@ void collisionHandler() {
          player.isDead = true;
          stateHandler.gameState = 2;
        }
+       enemies.get(i).isDead = true;
        player.isShielded = false;
      }
      for (int j = 0; j < enemies.get(i).bullets.size(); j++) {
