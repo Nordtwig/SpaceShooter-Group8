@@ -31,7 +31,7 @@ class Parallax {
   void parallaxCurve(int planet) {
     noStroke();
     for(int i = 0; i < planet; i += dotDistance) {
-      fill(184, 109, 3);
+      fill(84, 59, 3);
       ellipse(width / 2 + cos((frame  * speed) * -0.08) * planet, height / 2 + sin((frame  * speed) * -0.07) * planet, sizePlanet, sizePlanet);
     }
   }
@@ -52,7 +52,7 @@ class Parallax {
         position.y = height - (sizePlanet2 / 2);
       }
       noStroke();
-      fill(24, 83, 24);
+      fill(24, 53, 24);
       ellipse(position.x, position.y, sizePlanet2, sizePlanet2);
   }
 
@@ -72,7 +72,7 @@ class Parallax {
         position1.y = height - (sizePlanet3 / 2);
       }
       noStroke();
-      fill(97, 88, 179);
+      fill(97, 88, 79);
       ellipse(position1.x, position1.y, sizePlanet3, sizePlanet3);
   }
 }

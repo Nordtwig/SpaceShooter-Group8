@@ -17,7 +17,7 @@ class Player extends Spaceship {
     fireRate = 10;
     scoreTimer = 0;
     scoreRate = 5;
-    shipColor = color(0, 0, 168);
+    shipColor = color(50, 200, 50);
   }
 
   void move() {
@@ -79,7 +79,7 @@ class Player extends Spaceship {
   void shootBullet() {
     if (frameCounter >= fireRate) {
       bulletSound(1);
-      bullets.add(new Bullet(position, mouseX, mouseY, 6));
+      bullets.add(new Bullet(position, mouseX, mouseY, 6, shipColor));
       frameCounter= 0;
     }
   }

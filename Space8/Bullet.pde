@@ -8,13 +8,13 @@ class Bullet {
   float size = 5;
   int bulletColor;
 
-  public Bullet (PVector shipPos, float directionX, float directionY, int bulletSpeed) {
+  public Bullet (PVector shipPos, float directionX, float directionY, int bulletSpeed, int bColor) {
     position = new PVector(shipPos.x, shipPos.y);
     direction = new PVector(directionX, directionY);
     direction.sub(position);
     direction.normalize();
     speed = bulletSpeed;
-    bulletColor = color(250, 233, 5);
+    bulletColor = bColor;
   }
 
   void move() {
