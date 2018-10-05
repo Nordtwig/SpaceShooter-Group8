@@ -69,14 +69,12 @@ float randomPosition(float pos, float axis) {
 
 void musicBox() {
   soundTrack = new SoundFile(this, "Audio/space8TrackShort.wav");
-  soundTrack.amp(0.5);
   soundTrack.loop();
 }
 
 void bulletSound(int shooter) {
   enemySound = new SoundFile(this, "Audio/pew1.wav");
   playerSound = new SoundFile(this, "Audio/pew2.wav");
-  playerSound.amp(1);
   if (shooter == 0) {
     enemySound.play();
   }
