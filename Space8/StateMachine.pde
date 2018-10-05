@@ -8,6 +8,7 @@ class StateMachine {
 
   void startScreen() {
     background(0);
+    parallax.show();
 
     noFill();
     stroke(169, 138, 30);
@@ -99,6 +100,7 @@ class StateMachine {
     PFont font;
     font = createFont("Tahoma Fet", 80);
     background(0);
+    parallax.show();
     textFont(font);
 
     fill(0, 0, 255);
