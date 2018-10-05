@@ -1,6 +1,7 @@
 import processing.sound.*;
 
 Player player;
+Parallax parallax;
 ArrayList<Enemy> enemies;
 StateMachine stateHandler;
 // PrintWriter scoreKeeper;
@@ -20,6 +21,7 @@ void setup() {
   size(800, 800);
   stateHandler = new StateMachine();
   name = new NamePrompt(700, 440);
+  parallax = new Parallax();
   musicBox();
   scoreTable = loadTable("data/HighScore.csv","header");
   findHighScore1();

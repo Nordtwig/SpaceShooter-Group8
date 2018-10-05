@@ -65,6 +65,7 @@ class StateMachine {
 
   void gameScreen() {
     background(0);
+    parallax.show();
     collisionHandler();
     fill(255);
     text(score, width - 30, 20);
@@ -89,7 +90,7 @@ class StateMachine {
       if (!enemies.get(i).isDead) {
         enemies.get(i).show();
       }
-      enemies.get(i).move();      
+      enemies.get(i).move();
     }
     frameCounter++;
   }
