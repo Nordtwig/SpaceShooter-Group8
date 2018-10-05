@@ -69,7 +69,8 @@ class StateMachine {
     parallax.show();
     collisionHandler();
     fill(255);
-    text(score, width - 30, 20);
+    textAlign(RIGHT);
+    text(score, width - 10, 40);
     if (!player.isDead) {
       player.move();
       player.show();
