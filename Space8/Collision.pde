@@ -37,6 +37,7 @@ void collisionHandler() {
      if (enemyPlayer && !enemies.get(i).isDead) {
        if (!player.isShielded) {
          player.isDead = true;
+         stateHandler.gameState = 2;         
        }
        player.isShielded = false;
      }
