@@ -63,7 +63,7 @@ class Parallax {
         position1.x = 0 - (sizePlanet3 / 2);
       }
       else if(position1.x < 0 - (sizePlanet3 / 2)){
-        position1.x = width - (sizePlanet3 / 2);
+        position1.x = width + (sizePlanet3 / 2);
       }
       if(position1.y > height + (sizePlanet3 / 2)){
         position1.y = 0 - (sizePlanet3 / 2);
