@@ -72,19 +72,21 @@ class Enemy extends Spaceship {
 
   void stalkerEnemy() {
     shipColor = color(255, 0, 0);
+    size = 15;
     speed = 4;
     followPlayer();
   }
 
   void shooterEnemy() {
-    shipColor = color(128, 128, 0);
+    shipColor = color(206, 14, 255);
     speed = 2;
     shootPlayer();
     followPlayer();
   }
 
   void staticEnemy() {
-    shipColor = color(200, 128, 0);
+    shipColor = color(255, 107, 0);
+    size = 40;
     shootPlayer();
   }
 
@@ -99,7 +101,7 @@ class Enemy extends Spaceship {
   void shootPlayer() {
     if (frameCounter >= fireRate) {
       // bulletSound(0);
-      bullets.add(new Bullet(position, player.position.x, player.position.y, 4, shipColor));
+      bullets.add(new Bullet(position, player.position.x, player.position.y, 3, shipColor));
       frameCounter = 0;
     }
   }

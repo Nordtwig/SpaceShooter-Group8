@@ -25,6 +25,7 @@ void collisionHandler() {
         player.bullets.get(j).isVoid = true;
         player.bullets.get(j).position = new PVector(-50, -50);
         enemies.get(i).isDead = true;
+        enemies.get(i).position = new PVector(-50, -50);
         score += 50;
         numberOfEnemies--;
       }
@@ -41,6 +42,7 @@ void collisionHandler() {
          stateHandler.gameState = 2;
        }
        enemies.get(i).isDead = true;
+       enemies.get(i).position = new PVector(-50, -50);               
        player.isShielded = false;
      }
      for (int j = 0; j < enemies.get(i).bullets.size(); j++) {
